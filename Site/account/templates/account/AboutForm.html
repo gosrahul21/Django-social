@@ -1,0 +1,42 @@
+{%extends 'account/base.html'%}
+{%load staticfiles%}
+{% load crispy_forms_tags %}
+{%block head_block%}
+
+<link rel="stylesheet" href="{%static 'post/box.css'%}">
+<style>
+.box2{
+display:block;
+}
+
+
+</style>
+
+
+{%endblock%}
+
+
+
+{%block body_block%}
+
+
+<div class="box">
+    <div class="box2">
+        <div class="up">
+    {%if  not form.instance.pk%}
+<h3>fill your details</h3>
+{%else%}
+<h3>Update</h3>
+    {%endif%}
+        </div>
+        <div class="down">
+<form enctype="multipart/form-data" method="POST" >
+    {%csrf_token%}
+    {{form| crispy}}
+    <input type="submit" value="submit" class="btn btn-primary">
+</form>
+            </div>
+    </div>
+    </div>
+
+{%endblock%}

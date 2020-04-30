@@ -1,0 +1,152 @@
+body{
+background-color:#EEF1DE;
+}
+
+
+.box{
+	//border-radius: 25px;
+	width:700px;
+	//border:1px solid black;
+	padding: 50px;
+	margin:60px;
+	align-content: center;
+		//text-align: center;
+		margin-left: 25%;
+		//display: block;
+		background-color:white;
+
+}
+nav a{
+display:block;
+color:white;
+
+}
+nav a:hover{
+transition:all 0.1s ease;
+background-color:orange;
+}
+.box1{
+	border-radius: 25px;
+	width:100%;
+
+
+	padding: 50px;
+	//margin:15px;
+	padding-left: 40px;
+	padding-right: 20px;
+	//padding-top: 20px;
+	//padding-bottom: 10px;
+}
+.box1{
+	display: flex;
+}
+
+.pro{
+	border-radius: 50%;
+}
+a :hover {
+
+	transition:all 0.1s ease;
+	color:orange;
+
+
+
+}
+
+
+
+
+.active {
+  background-color: #4CAF50; /* Add an active/current color */
+}
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  background-color: #333;
+  top:0;
+  width:100%;
+
+
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+span{
+display:inline;
+}
+a{
+text-decoration:none;}
+.commentpic{
+border-radius:50%;
+}
+.jumbotron{
+align-content:center;
+text-align:center;
+}
+.jumbo{
+
+border-radius:25px;
+	width:700px;
+
+	padding: 50px;
+	//margin:60px;
+	align-content: center;
+		//text-align: center;
+		margin-left: 25%;
+		display:flex;
+		//background-color:#F5E9EF;
+
+}
+.jumbo .right{
+border-radius:25px;
+background:#F5E9EF;
+}
+.box .desc{
+
+text-align:none;
+text-content:center;
+width:100%;
+}

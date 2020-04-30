@@ -1,0 +1,109 @@
+{%extends 'account/base.html'%}
+{%load staticfiles%}
+{%block head_block%}
+
+<link rel="stylesheet" href="{%static 'insta.css'%}">
+
+
+{%endblock%}
+
+{%block body_block%}
+
+<header>
+
+	<div class="container">
+
+		<div class="profile">
+
+			<div class="profile-image">
+
+				<img src="{{about.profile_pic.url}}"  height="200px" width="200px" alt="">
+
+			</div>
+
+			<div class="profile-user-settings">
+
+				<h1 class="profile-user-name">{{about.first_name}} {{about.middle_name}} {{about.last_name}} </h1>
+                {%if about.user == user%}
+				<a class="btn profile-edit-btn" href="{%url 'account:userupdate' pk=about.pk%}">Edit Profile</a>
+				{%endif%}
+
+				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+			</div>
+
+			<div class="profile-stats">
+
+				<ul>
+					<li><span class="profile-stat-count">164</span> posts</li>
+					<li><span class="profile-stat-count">188</span> followers</li>
+					<li><span class="profile-stat-count">206</span> following</li>
+				</ul>
+
+			</div>
+
+			<div class="profile-bio">
+
+				<p><span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️</p>
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+	<!-- End of container -->
+
+</header>
+
+<main>
+
+	<div class="container">
+
+		<div class="gallery">
+            {%for pic in about.user.post.all%}
+
+			<div class="gallery-item" tabindex="0">
+
+				<a href="{%url 'post:detail' pk=pic.pk%}"><img src="{{pic.image.url}}" class="gallery-image"  height=10 width="10px " alt="">
+				</a>
+
+				<div class="gallery-item-info">
+
+					<ul>
+					    <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+					</ul>
+
+				</div>
+
+			</div>
+            {%endfor%}
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<!-- End of gallery -->
+
+		<div class="loader"></div>
+
+	</div>
+	<!-- End of container -->
+
+</main>
+{%endblock%}
+{%block leg_block%}
+<script type="text/javascript" src="insta.js"></script>
+{%endblock%}
+
+
+
+
+

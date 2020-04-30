@@ -1,0 +1,175 @@
+{%extends 'account/base.html'%}
+{%load staticfiles%}
+{%block head_block%}
+
+<link rel="stylesheet" href="{%static 'post/box.css'%}">
+
+{%endblock%}
+{%block body_block%}
+
+<!--
+
+    <div class='container'>
+
+
+<header>
+	<div>
+        <h3><a href="{%url 'account:user_detail' pk=post.created_by.pk%}">{{post.created_by}}</a></h3>
+        <span>{{post.created_at}}</span>
+
+        {%if post in user.post.all%}
+
+       <span><a href="{%url 'post:delete_post' pk=post.pk%}">delete</a></span>
+        {%endif%}
+
+	</div>
+ </header>
+
+
+<div class='container'>
+
+<div class="post">
+
+
+<div class='img'>
+ <img src="{{post.image.url}}" height="400px" width="300">
+
+</div>
+    <div>
+  <a href="{%url 'post:comment' pk=post.pk%}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comment</a>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+ <div class='desc'>
+
+<div class="jumbotron">
+
+{%for item in post.comment.all%}
+<div class="jumbo">
+
+
+        <div class="left">
+
+            <img  class="commentpic" src="{{item.user.AboutUser.profile_pic.url}}" height="90px" width="90px">
+        </div>
+        <div class="right">
+
+            <div class="comment">
+                <a href="{%url 'account:user_detail' pk=item.user.pk%}"><b>{{ item.user.username}}</b></a>
+                <p>{{item.comment}}</p>
+            </div>
+            <p> {{item.created_at}}</p>
+            {%if item in user.comment_user.all%}
+           <span> <a href="{%url 'post:delete_comment' pk=item.pk%}"> delete</a></span>
+            <span><a href="{%url 'post:edit_comment' pk=item.pk%}">edit</a> </span>
+
+            {%endif%}
+
+         </div>
+
+
+
+</div>
+    {%endfor%}
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+------------------------------------------------------------------>
+
+<div class='box'>
+		<div class="box1">
+
+			<div class="left">
+
+              <img class='pro' src="{{post.created_by.AboutUser.profile_pic.url}}" height="100px" width="100">
+
+
+			</div>
+
+			<div class='right'>
+                <h3><a href="{%url 'account:user_detail' pk=post.created_by.pk%}"><inline>{{post.created_by.AboutUser.first_name}} {{post.created_by.AboutUser.middle_name}} {{post.created_by.AboutUser.last_name}}</inline></a></h3>
+                <span>{{post.created_at}}</span>
+                 {%if post in user.post.all%}
+
+                  <span><a href="{%url 'post:delete_post' pk=post.pk%}">delete</a></span>
+                {%endif%}
+
+			</div>
+
+
+		</div>
+		     <div class='image'>
+
+                   <img src="{{post.image.url}}" height="500px" width="400">
+		     </div>
+
+
+                 	<div class='desc'>
+
+         <p>{{post.description}}</p>
+
+
+        </div>
+
+    <div>
+  <a href="{%url 'post:comment' pk=post.pk%}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comment</a>
+    </div>
+    </div>
+    {%for item in post.comment.all%}
+<div class="jumbo">
+
+
+        <div class="left">
+
+            <img  class="commentpic" src="{{item.user.AboutUser.profile_pic.url}}" height="90px" width="90px">
+        </div>
+        <div class="right">
+
+            <div class="comment">
+                <a href="{%url 'account:user_detail' pk=item.user.pk%}"><b>{{ item.user.username}}</b></a>
+                <p>{{item.comment}}</p>
+            </div>
+            <p> {{item.created_at}}</p>
+            {%if item in user.comment_user.all%}
+               <span> <a href="{%url 'post:delete_comment' pk=item.pk%}"> delete</a></span>
+                <span><a href="{%url 'post:edit_comment' pk=item.pk%}">edit</a> </span>
+
+            {%endif%}
+
+
+</div>
+
+
+
+</div>
+    {%endfor%}
+
+
+
+
+
+
+{%endblock%}

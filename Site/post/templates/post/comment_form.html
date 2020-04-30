@@ -1,0 +1,21 @@
+{%extends 'account/base.html'%}
+
+{%load crispy_forms_tags%}
+{%block body_block%}
+
+
+<div class="jumbotron">
+
+
+
+<form method="post">
+    {%csrf_token%}
+    {{form|crispy}}
+
+
+    <input type="submit" class="btn btn-primary" value="comment">
+
+
+</form>
+    </div>
+{%endblock%}
