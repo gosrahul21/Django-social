@@ -36,7 +36,7 @@ class  AboutCreate(LoginRequiredMixin,SelectRelatedMixin,CreateView):
 
 class UserDetail(LoginRequiredMixin,DetailView):
     model=About
-    template_name ='account/about_user.html '
+    template_name ='account/about_user.html'
 
 
 

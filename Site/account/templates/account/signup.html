@@ -1,15 +1,22 @@
-{{%extends 'account/base.html'%}
+{%extends 'account/base.html'%}
 {%load staticfiles%}
+{%load crispy_forms_tags%}
+
 {%block head_block%}
 
-<link rel="stylesheet" href="{%static 'post/post.css'%}">
+<link rel="stylesheet" href="{%static 'post/box.css'%}">
 
 
 {%endblock%}
 
 {%block body_block%}
-<form method="POST">{%csrf_token%}
-{{form.as_p}}
-<input type="submit" value="login"></form>
-
+<div class="box">
+    <h2>Enter Details</h2>
+    <div class="box1">
+<form method="POST">
+    {%csrf_token%}
+{{form|crispy}}
+<input type="submit" class='btn btn-primary' value="SignUp"></form>
+        </div>
+</div>
 {%endblock%}
