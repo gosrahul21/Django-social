@@ -62,6 +62,11 @@
 							Login
 						</button>
 					</div>
+					{%if form.errors%}
+					<span class="txt1">
+							Username/password not valid
+						</span>
+					{%endif%}
 
 					<div class="text-center p-t-12">
 						<span class="txt1">
@@ -73,7 +78,11 @@
 					</div>
 
 					<div class="text-center p-t-136">
+<<<<<<< HEAD
 					<a class="txt2" href="{%url 'account:signup'%}">
+=======
+						<a class="txt2" href="{%url 'account:signup'%}">
+>>>>>>> de0243fe2f0849fe5214af790380cc7bc03c3fa9
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
